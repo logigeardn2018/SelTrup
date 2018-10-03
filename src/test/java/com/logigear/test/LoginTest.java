@@ -19,7 +19,7 @@ public class LoginTest extends TestBase {
 
 	@Test()
 	public void TC002_InvalidUser() {
-
+		assertTrue(true);
 	}
 
 	private LoginPage loginPage = new LoginPage();
