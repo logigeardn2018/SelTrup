@@ -21,6 +21,11 @@ public class LoginTest extends TestBase {
 	public void TC002_InvalidUser() {
 
 	}
+	
+	@Test(groups = { "smoke" })
+	public void TC003_InvalidPassword() {
+		assertTrue(true);
+	}
 
 	private LoginPage loginPage = new LoginPage();
 	private ScrumBoardPage scrumBoardPage = new ScrumBoardPage();
