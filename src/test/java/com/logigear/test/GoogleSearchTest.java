@@ -17,8 +17,8 @@ public class GoogleSearchTest extends TestBase {
 	}
 
 	@Test()
-	public void TC002_InvalidUser() {
-
+	public void TC002_SearchWithNumber() {
+		assertTrue(true);
 	}
 
 	@Test(groups = { "smoke" })
