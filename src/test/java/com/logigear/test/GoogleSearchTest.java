@@ -22,7 +22,7 @@ public class GoogleSearchTest extends TestBase {
 	}
 
 	@Test(groups = { "smoke" })
-	public void TC003_InvalidPassword() {
+	public void TC003_SearchWithText() {
 		assertTrue(false);
 	}
 
