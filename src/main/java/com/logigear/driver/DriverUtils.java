@@ -19,10 +19,8 @@ public class DriverUtils {
 		return driver;
 	}
 
-	public static void openScrumBoard() {
-		String url = System.getProperty("user.dir") + "\\aut\\ScrumBoard\\login.html";
-		System.out.println("openScrumBoard: " + url);
-		getChromeDriver().navigate().to(url);
+	public static void openGooglePage() {
+		getChromeDriver().navigate().to("https://www.google.com");
 	}
 
 	public static void quitBrowser() {
@@ -42,6 +40,10 @@ public class DriverUtils {
 		findElement(by).click();
 	}
 	
+	public static void submit(By by) {
+		findElement(by).submit();
+	}
+
 	public static String getTitle() {
 		return getChromeDriver().getTitle();
 	}
