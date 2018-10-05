@@ -23,7 +23,7 @@ public class GoogleSearchTest extends TestBase {
 
 	@Test(groups = { "smoke" })
 	public void TC003_InvalidPassword() {
-		assertTrue(true);
+		assertTrue(false);
 	}
 
 	private GoogleSearchPage googleSearchPage = new GoogleSearchPage();
