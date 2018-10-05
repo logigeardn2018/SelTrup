@@ -9,7 +9,7 @@ public class TestBase {
 
 	@BeforeClass(alwaysRun = true)
 	public void setup() {
-		DriverUtils.openScrumBoard();
+		DriverUtils.openGooglePage();
 	}
 
 	@AfterClass(alwaysRun = true)
