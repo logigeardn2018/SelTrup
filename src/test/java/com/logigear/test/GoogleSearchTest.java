@@ -18,12 +18,17 @@ public class GoogleSearchTest extends TestBase {
 
 	@Test()
 	public void TC002_InvalidUser() {
-
+		
 	}
 
 	@Test(groups = { "smoke" })
 	public void TC003_InvalidPassword() {
 		assertTrue(true);
+	}
+	
+	@Test(groups = { "smoke" })
+	public void TC004_InvalidPassword() {
+		assertTrue(false);
 	}
 
 	private GoogleSearchPage googleSearchPage = new GoogleSearchPage();
