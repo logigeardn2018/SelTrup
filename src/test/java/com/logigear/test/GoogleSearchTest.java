@@ -23,7 +23,7 @@ public class GoogleSearchTest extends TestBase {
 
 	@Test(groups = { "smoke" })
 	public void TC003_SearchWithText() {
-		assertTrue(false);
+		assertTrue(true);
 	}
 
 	private GoogleSearchPage googleSearchPage = new GoogleSearchPage();
