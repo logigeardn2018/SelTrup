@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite" thread-count="5" parallel="false">
+	<listeners>
+		<listener
+			class-name="com.logigear.reportportal.ReportPortalListener" />
+	</listeners>
+
+	<test name="Run Smoke Tests">
+		<packages>
+			<package name="com.logigear.test"></package>
+		</packages>
+	</test>
+	<test name="Run Smoke Tests 1">
+		<packages>
+			<package name="com.logigear.test"></package>
+		</packages>
+	</test>
+	<test name="Run Smoke Tests 2">
+		<packages>
+			<package name="com.logigear.test"></package>
+		</packages>
+	</test>
+	<test name="Run Smoke Tests 3">
+		<packages>
+			<package name="com.logigear.test"></package>
+		</packages>
+	</test>
+	<test name="Run Smoke Tests 4">
+		<packages>
+			<package name="com.logigear.test"></package>
+		</packages>
+	</test>
+</suite>
