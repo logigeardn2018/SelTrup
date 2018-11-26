@@ -6,7 +6,7 @@
 			class-name="com.logigear.reportportal.ReportPortalListener" />
 	</listeners>
 
-	<test name="Run Smoke Tests">
+	<test name="Run Regression Tests">
 		<packages>
 			<package name="com.logigear.test"></package>
 		</packages>
