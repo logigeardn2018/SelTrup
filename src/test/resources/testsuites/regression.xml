@@ -11,24 +11,4 @@
 			<package name="com.logigear.test"></package>
 		</packages>
 	</test>
-	<test name="Run Smoke Tests 1">
-		<packages>
-			<package name="com.logigear.test"></package>
-		</packages>
-	</test>
-	<test name="Run Smoke Tests 2">
-		<packages>
-			<package name="com.logigear.test"></package>
-		</packages>
-	</test>
-	<test name="Run Smoke Tests 3">
-		<packages>
-			<package name="com.logigear.test"></package>
-		</packages>
-	</test>
-	<test name="Run Smoke Tests 4">
-		<packages>
-			<package name="com.logigear.test"></package>
-		</packages>
-	</test>
 </suite>
