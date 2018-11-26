@@ -31,6 +31,11 @@ public class GoogleTests extends TestBase {
 	public void TC004_GoToHome() {
 		assertTrue(true);
 	}
+	
+	@Test(description = "User can go to doodles")
+	public void TC005_GoToDoodles() {
+		assertTrue(true);
+	}
 
 	private GoogleSearchPage googleSearchPage = new GoogleSearchPage();
 	private GoogleHomePage googleHomePage = new GoogleHomePage();
