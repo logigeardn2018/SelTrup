@@ -1,6 +1,9 @@
 package com.logigear.test;
 
+import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
+
+import java.util.Random;
 
 import org.testng.annotations.Test;
 
@@ -24,7 +27,9 @@ public class GoogleTests extends TestBase {
 
 	@Test(description = "Refresh search results page")
 	public void TC003_RefreshSearchResult() {
-		assertTrue(true);
+		Random random = new Random();
+		int i = random.nextInt(2);
+		assertEquals(1, i);
 	}
 
 	@Test(description = "User can go to home")
