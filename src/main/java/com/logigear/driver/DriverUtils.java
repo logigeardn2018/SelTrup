@@ -1,9 +1,13 @@
 package com.logigear.driver;
 
+import java.io.File;
 import java.net.MalformedURLException;
-import java.net.URL;
+import java.net.URI;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -17,16 +21,33 @@ public class DriverUtils {
 
 	private static synchronized WebDriver getChromeDriver() {
 		if (driver == null) {
-			//System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver.exe");
 			ChromeOptions ops = new ChromeOptions();
 			try {
-				driver = new RemoteWebDriver(new URL("http://192.168.191.205:4444/wd/hub"), ops);
+				driver = new RemoteWebDriver(URI.create("http://192.168.191.116:4444/wd/hub").toURL(), ops);
 			} catch (MalformedURLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+
 		}
 		return driver;
+	}
+	
+	public static String captureScreenshot(String filename, String filepath) {
+		String path = "";
+		try {
+			// Taking the screen using TakesScreenshot Class
+			File objScreenCaptureFile = ((TakesScreenshot) getChromeDriver()).getScreenshotAs(OutputType.FILE);
+
+			// Storing the image in the local system.
+			File dest = new File(
+					System.getProperty("user.dir") + File.separator + filepath + File.separator + filename + ".png");
+			FileUtils.copyFile(objScreenCaptureFile, dest);
+			path = dest.getAbsolutePath();
+		} catch (Exception e) {
+			System.out.println("An error occurred when capturing screen shot: " + e.getMessage());
+		}
+		return path;
 	}
 
 	public static void openGooglePage() {
@@ -35,6 +56,7 @@ public class DriverUtils {
 
 	public static void quitBrowser() {
 		getChromeDriver().quit();
+		driver = null;
 	}
 
 	public static WebElement findElement(By by) {
@@ -49,7 +71,7 @@ public class DriverUtils {
 	public static void click(By by) {
 		findElement(by).click();
 	}
-	
+
 	public static void submit(By by) {
 		findElement(by).submit();
 	}

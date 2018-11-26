@@ -6,7 +6,7 @@ import com.logigear.driver.DriverUtils;
 
 public class GoogleHomePage {
 
-	private By searchTextBox = By.id("lst-ib");
+	private By searchTextBox = By.name("q");
 	private By googleSearchButton = By.name("btnK");
 
 	public boolean isAt() {

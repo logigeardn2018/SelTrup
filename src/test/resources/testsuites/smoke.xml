@@ -2,7 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite" thread-count="5" parallel="tests">
 	<listeners>
-
+        <listener class-name="com.logigear.reportportal.ReportPortalListener" />
 	</listeners>
 
 	<test name="Run Smoke Tests">
