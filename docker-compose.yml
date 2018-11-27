@@ -3,7 +3,7 @@ services:
  selenoid:
   container_name: selenoid
   network_mode: bridge
-  image: aerokube/selenoid
+  image: lgselnoid
   volumes:
     - "$PWD:/etc/selenoid"
     - "/var/run/docker.sock:/var/run/docker.sock"
@@ -28,7 +28,7 @@ services:
  web:
   container_name: web
   network_mode: bridge
-  image: myweb
+  image: lgweb
   expose:
    - "80"
   ports:
