@@ -37,4 +37,11 @@ public class LogiGearTests extends TestBase {
 		int i = random.nextInt(2);
 		assertEquals(1, i);
 	}
+	
+	@Test(description = "User can go to home")
+	public void TC005_GoToHome() {
+		Random random = new Random();
+		int i = random.nextInt(2);
+		assertEquals(1, i);
+	}
 }
