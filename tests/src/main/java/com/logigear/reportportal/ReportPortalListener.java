@@ -43,4 +43,11 @@ public class ReportPortalListener extends BaseTestNGListener {
 		super.onTestFailure(testResult);
 	}
 
+	@Override
+	public void onConfigurationFailure(ITestResult testResult) {
+		String path = DriverUtils.captureScreenshot(UUID.randomUUID().toString(), "screenshots");
+		ReportPortal.emitLog("", "info", new Date(), new File(path));
+		super.onConfigurationFailure(testResult);
+	}
+
 }
