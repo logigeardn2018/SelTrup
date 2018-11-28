@@ -12,7 +12,7 @@ import com.logigear.utils.TestBase;
 
 public class NewStoryTests extends TestBase {
 
-	@BeforeClass
+	@BeforeClass(alwaysRun = true)
 	public void pre() {
 		loginPage.login(Constants.USER, Constants.PWD);
 	}
