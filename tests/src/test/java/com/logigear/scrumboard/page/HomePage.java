@@ -6,7 +6,7 @@ import com.logigear.driver.DriverUtils;
 
 public class HomePage {
 	private By welcome = By.id("divWelcome");
-	private By btnNewStory = By.id("btnCreate123");
+	private By btnNewStory = By.id("btnCreate");
 	private By btnCreate = By.xpath("//button[span[text()='Create']]");
 	private By titleRequiredMessage = By.xpath("//span[text()='Title is required']");
 
