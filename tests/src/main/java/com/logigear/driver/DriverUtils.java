@@ -24,8 +24,8 @@ public class DriverUtils {
 		try {
 			String hub = System.getenv("HUB");
 			if (hub == null || hub.isEmpty()) {
-				// hub = "http://192.168.191.116:4444/wd/hub";
-				hub = "http://localhost:4444/wd/hub";
+				hub = "http://192.168.191.116:4444/wd/hub";
+				//hub = "http://localhost:4444/wd/hub";
 			}
 			driver = new RemoteWebDriver(URI.create(hub).toURL(), ops);
 		} catch (MalformedURLException e) {
