@@ -6,7 +6,7 @@ import com.logigear.driver.DriverUtils;
 
 public class LoginPage {
 
-	private By lblUsername = By.xpath("//td[normalize-space()='Username']");
+	private By lblUsername = By.xpath("//td[normalize-space()='Email']");
 	private By lblPassword = By.xpath("//td[normalize-space()='Password']");
 
 	private By txtUserName = By.id("txtUserName");
