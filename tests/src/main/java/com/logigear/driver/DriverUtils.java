@@ -19,25 +19,25 @@ public class DriverUtils {
 
 	private static WebDriver driver;
 
-	private static synchronized WebDriver getChromeDriver() {
-		if (driver == null) {
-			ChromeOptions ops = new ChromeOptions();
-			try {
-				driver = new RemoteWebDriver(URI.create("http://192.168.191.116:4444/wd/hub").toURL(), ops);
-			} catch (MalformedURLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+	private static void openChrome() {
+		ChromeOptions ops = new ChromeOptions();
+		try {
+			String hub = System.getenv("HUB");
+			if (hub == null || hub.isEmpty()) {
+				hub = "http://192.168.191.116:4444/wd/hub";
+				//hub = "http://localhost:4444/wd/hub";
 			}
-
+			driver = new RemoteWebDriver(URI.create(hub).toURL(), ops);
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
 		}
-		return driver;
 	}
-	
+
 	public static String captureScreenshot(String filename, String filepath) {
 		String path = "";
 		try {
 			// Taking the screen using TakesScreenshot Class
-			File objScreenCaptureFile = ((TakesScreenshot) getChromeDriver()).getScreenshotAs(OutputType.FILE);
+			File objScreenCaptureFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 
 			// Storing the image in the local system.
 			File dest = new File(
@@ -50,22 +50,28 @@ public class DriverUtils {
 		return path;
 	}
 
-	public static void openGooglePage() {
-		getChromeDriver().navigate().to("https://www.google.com");
+	public static void openLoginScrumBoard() {
+		openChrome();
+		String url = System.getenv("AUT");
+		if (url == null || url.isEmpty()) {
+			url = "http://192.168.191.116/login.html";
+		}
+		driver.navigate().to(url);
 	}
 
 	public static void quitBrowser() {
-		getChromeDriver().quit();
-		driver = null;
+		driver.quit();
 	}
 
 	public static WebElement findElement(By by) {
-		WebDriverWait wait = new WebDriverWait(getChromeDriver(), 10);
+		WebDriverWait wait = new WebDriverWait(driver, 10);
 		return wait.until(ExpectedConditions.presenceOfElementLocated(by));
 	}
 
 	public static void enter(By by, String value) {
-		findElement(by).sendKeys(value);
+		WebElement el = findElement(by);
+		el.clear();
+		el.sendKeys(value);
 	}
 
 	public static void click(By by) {
@@ -76,7 +82,19 @@ public class DriverUtils {
 		findElement(by).submit();
 	}
 
+	public static boolean isElementDisplayed(By by) {
+		try {
+			return driver.findElement(by).isDisplayed();
+		} catch (Exception e) {
+			return false;
+		}
+	}
+
 	public static String getTitle() {
-		return getChromeDriver().getTitle();
+		return driver.getTitle();
+	}
+
+	public static String getText(By by) {
+		return findElement(by).getText();
 	}
 }

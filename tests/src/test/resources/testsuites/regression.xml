@@ -8,7 +8,7 @@
 
 	<test name="Run Regression Tests">
 		<packages>
-			<package name="com.logigear.test"></package>
+			<package name="com.logigear.scrumboard.tests"></package>
 		</packages>
 	</test>
 </suite>
