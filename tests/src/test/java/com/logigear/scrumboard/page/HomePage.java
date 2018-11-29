@@ -9,7 +9,6 @@ public class HomePage {
 	private By btnNewStory = By.id("btnCreate");
 	private By btnCreate = By.xpath("//button[span[text()='Create']]");
 	private By titleRequiredMessage = By.xpath("//span[text()='Title is required']");
-	private By btn_delete;
 
 	public boolean isWelcomeMessageDisplayed() {
 		return DriverUtils.isElementDisplayed(welcome);

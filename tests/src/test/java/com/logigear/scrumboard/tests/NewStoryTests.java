@@ -17,7 +17,7 @@ public class NewStoryTests extends TestBase {
 
 	@BeforeClass(alwaysRun = true)
 	public void pre() {
-		loginPage.login(Constants.USER, Constants.PWD);
+		loginPage.login(Constants.USER_NAME, Constants.PASSWORD);
 	}
 
 	@Test(groups = { "smoke" }, description = "New Story button displays on Home Page")

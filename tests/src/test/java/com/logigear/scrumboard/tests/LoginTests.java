@@ -30,7 +30,7 @@ public class LoginTests extends TestBase {
 
 	@Test(groups = { "smoke" }, description = "User logins successful")
 	public void TC004_LoginSuccessful() {
-		loginPage.login(Constants.USER, Constants.PWD);
+		loginPage.login(Constants.USER_NAME, Constants.PASSWORD);
 		assertTrue(homePage.isWelcomeMessageDisplayed(), "Home page should be displayed");
 	}
 
