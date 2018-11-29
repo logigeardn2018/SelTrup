@@ -38,14 +38,20 @@ public class NewStoryTests extends TestBase {
 		assertEquals(1, rnd.nextInt(2));
 	}
 
-	@Test(description = "Error message displays in case spent description")
+	@Test(description = "Error message displays in case empty spent")
 	public void TC004_SpentFieldValidation() {
 		Random rnd = new Random();
 		assertEquals(rnd.nextInt(2), 1);
 	}
 
-	@Test(description = "Error message displays in case assignee description")
+	@Test(description = "Error message displays in case empty assignee")
 	public void TC005_AssigneeFieldValidation() {
+		Random rnd = new Random();
+		assertEquals(rnd.nextInt(2), 1);
+	}
+
+	@Test(description = "Error message displays in case empty estimate")
+	public void TC006_EstimateFieldValidation() {
 		Random rnd = new Random();
 		assertEquals(rnd.nextInt(2), 1);
 	}
