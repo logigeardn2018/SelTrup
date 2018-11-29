@@ -2,6 +2,6 @@ package com.logigear.utils;
 
 public class Constants {
 
-	public static String PWD = "tester";
-	public static String USER = "john";
+	public static final String PASSWORD = "tester";
+	public static final String USER_NAME = "john";
 }
