@@ -1,0 +1,15 @@
+@objects
+    txtUserName id  txtUserName
+    txtPassword id  txtPassword
+    lblUserName id  lblUserName
+    btnLogin    id  btnLogin
+    
+= Main section =
+    @on desktop
+        lblUserName:
+            text is "Username"
+            left-of txtUserName 0px
+        txtUserName:
+            above txtPassword 11px    
+        btnLogin:
+            near txtPassword -69px top, -182px left                          

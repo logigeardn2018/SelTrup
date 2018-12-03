@@ -14,6 +14,10 @@ public class LoginPage {
 	private By btnLogin = By.id("btnLogin");
 	private By errMsg = By.id("errMsg");
 
+	public void openLoginPage() {
+		DriverUtils.openLoginPage();
+	}
+
 	public boolean isUserNameLabelDisplayed() {
 		return DriverUtils.isElementDisplayed(lblUsername);
 	}

@@ -19,7 +19,7 @@ public class DriverUtils {
 
 	private static WebDriver driver;
 
-	private static void openChrome() {
+	public static WebDriver openChrome() {
 		ChromeOptions ops = new ChromeOptions();
 		try {
 			String hub = System.getenv("HUB");
@@ -31,6 +31,7 @@ public class DriverUtils {
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}
+		return driver;
 	}
 
 	public static String captureScreenshot(String filename, String filepath) {
@@ -52,6 +53,14 @@ public class DriverUtils {
 
 	public static void openLoginScrumBoard() {
 		openChrome();
+		String url = System.getenv("AUT");
+		if (url == null || url.isEmpty()) {
+			url = "http://192.168.191.116/login.html";
+		}
+		driver.navigate().to(url);
+	}
+
+	public static void openLoginPage() {
 		String url = System.getenv("AUT");
 		if (url == null || url.isEmpty()) {
 			url = "http://192.168.191.116/login.html";
